@@ -8,3 +8,13 @@ jobs:
       - name: Getting started
         run: |
           echo Hello from GitHub Actions
+      - name: Azure Login
+        uses: azure/login@v1
+        with:
+          creds: ${{ secrets.AZURE_CREDENTIALS }}
+      - name: Azure CLI script
+        uses: azure/CLI@v1
+        with:
+          inlineScript: |
+            az group create --name BicepGithub --location east
+            az deployment group what-if --name BicepDeployment --resource-group BicepGithub --template-file ./main.bicep
