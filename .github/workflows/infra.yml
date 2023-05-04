@@ -16,5 +16,5 @@ jobs:
         uses: azure/CLI@v1
         with:
           inlineScript: |
-            az group create --name BicepGithub --location east
-            az deployment group what-if --name BicepDeployment --resource-group BicepGithub --template-file ./main.bicep
+            az group create --name Bicep --location east
+            az deployment group what-if --name BicepDeployment --resource-group Bicep --template-file ./main.bicep
