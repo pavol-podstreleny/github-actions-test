@@ -18,3 +18,4 @@ jobs:
           inlineScript: |
             az group create --name Bicep --location eastus
             az deployment group what-if --name BicepDeployment --resource-group Bicep --template-file ./main.bicep
+            az deployment group create --name BicepDeployment --resource-group Bicep --template-file ./main.bicep
